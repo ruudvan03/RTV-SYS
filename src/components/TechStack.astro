@@ -1,0 +1,150 @@
+---
+const techs = [
+  'React', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB',
+  'Docker', 'AWS', 'Next.js', 'Astro', 'TypeScript',
+  'FastAPI', 'Redis', 'GraphQL', 'Kubernetes', 'Terraform',
+];
+// duplicate for seamless loop
+const row1 = [...techs, ...techs];
+const row2 = [...[...techs].reverse(), ...[...techs].reverse()];
+---
+
+<section class="section tech-section" id="tech">
+  <div class="container">
+    <div class="tech-header reveal">
+      <p class="section-tag">// TECNOLOGÍAS</p>
+      <h2 class="section-title">Stack que<br/>domina<span class="dot">.</span></h2>
+      <p class="section-sub">
+        Trabajamos con las herramientas más modernas y probadas de la industria.
+        Sin frameworks de moda sin sustento real.
+      </p>
+    </div>
+  </div>
+
+  <!-- MARQUEE rows -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track track-fwd">
+      {row1.map(t => <span class="tech-chip">{t}</span>)}
+    </div>
+    <div class="marquee-track track-rev">
+      {row2.map(t => <span class="tech-chip">{t}</span>)}
+    </div>
+  </div>
+
+  <!-- CODE WINDOW -->
+  <div class="container">
+    <div class="code-window reveal">
+      <div class="code-bar">
+        <span class="dot-r"></span>
+        <span class="dot-y"></span>
+        <span class="dot-g"></span>
+        <span class="code-filename">rtv-sys/api/main.py</span>
+      </div>
+      <pre class="code-body"><code><span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI
+<span class="kw">from</span> rtv_sys.core <span class="kw">import</span> database, auth, logger
+
+app = FastAPI(title=<span class="str">"RTV SYS API"</span>, version=<span class="str">"3.0.0"</span>)
+
+<span class="comment"># Middleware stack — seguridad, logging, rate-limit</span>
+app.include_router(auth.router, prefix=<span class="str">"/auth"</span>)
+app.include_router(database.router, prefix=<span class="str">"/data"</span>)
+
+<span class="kw">@app.get</span>(<span class="str">"/"</span>)
+<span class="kw">async def</span> <span class="fn">health</span>():
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"online"</span>, <span class="str">"empresa"</span>: <span class="str">"RTV SYS"</span>}
+</code></pre>
+    </div>
+  </div>
+</section>
+
+<style>
+.tech-header { margin-bottom: 3.5rem; }
+.dot { color: var(--cyan); }
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  overflow: hidden;
+  margin: 0 -1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+}
+.track-fwd { animation: marquee-fwd 28s linear infinite; }
+.track-rev { animation: marquee-rev 28s linear infinite; }
+
+@keyframes marquee-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+.tech-chip {
+  flex-shrink: 0;
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  border: 1px solid var(--card-b);
+  background: var(--card-bg);
+  padding: 0.45rem 1.1rem;
+  border-radius: 99px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tech-chip:hover {
+  color: var(--cyan);
+  border-color: rgba(0,212,255,0.5);
+}
+
+/* ── CODE WINDOW ── */
+.code-window {
+  background: #050E1C;
+  border: 1px solid var(--card-b);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0,212,255,0.04);
+  border-bottom: 1px solid var(--card-b);
+}
+.dot-r { width:10px;height:10px;border-radius:50%;background:#FF5F57; }
+.dot-y { width:10px;height:10px;border-radius:50%;background:#FEBC2E; }
+.dot-g { width:10px;height:10px;border-radius:50%;background:#28C840; }
+.code-filename {
+  margin-left: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+}
+
+.code-body {
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+.code-body code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: #aac4de;
+}
+.kw     { color: #79b8ff; }
+.str    { color: #9ecbff; }
+.fn     { color: #00d4ff; }
+.comment{ color: #4a6a85; font-style: italic; }
+</style>

@@ -1,0 +1,146 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Diagnóstico',
+    desc: 'Escuchamos tu operación, tus dolores y tus metas. Analizamos el contexto técnico y humano antes de proponer cualquier solución.',
+    detail: '1 sesion virtual o presencial de 60 min aprox',
+  },
+  {
+    num: '02',
+    title: 'Propuesta técnica',
+    desc: 'Entregamos un documento con arquitectura propuesta, stack tecnológico, cronograma detallado y presupuesto.',
+    detail: '1–2 días hábiles',
+  },
+  {
+    num: '03',
+    title: 'Desarrollo ágil',
+    desc: 'Sesiones periódicas durante el desarrollo para mostrar progresos y aplicar mejoras al sistema antes de la entrega final.',
+    detail: 'Periodicas',
+  },
+  {
+    num: '04',
+    title: 'QA & Pruebas',
+    desc: 'Cobertura de pruebas , integración y carga. Nada sale a producción sin pasar por un proceso riguroso de calidad.',
+    detail: 'Pruebas automatizadas',
+  },
+  {
+    num: '05',
+    title: 'Entrega & Deploy',
+    desc: 'Despliegue en la nube.',
+    detail: 'Mismo día de la entrega',
+  },
+  {
+    num: '06',
+    title: 'Soporte continuo',
+    desc: 'Cualquier error o incidencia reportada será atendida y solucionada en un lapso máximo de 24 horas hábiles. (Nota: El horario de atención y soporte es de lunes a viernes. Sábados y domingos la empresa no labora.',
+    detail: '24 Horas maximo despues del reporte',
+  },
+];
+---
+
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="proc-header reveal">
+      <p class="section-tag">// PROCESO</p>
+      <h2 class="section-title">Cómo lo<br/><span class="cyan">hacemos realidad</span></h2>
+      <p class="section-sub">
+        Un proceso probado en cientos de proyectos. Sin improvisación.
+      </p>
+    </div>
+
+    <div class="proc-grid" role="list">
+      {steps.map((s, i) => (
+        <div class="proc-step reveal" style={`transition-delay:${i * 0.1}s`} role="listitem">
+          <div class="step-num-wrap" aria-hidden="true">
+            <span class="step-num">{s.num}</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <span class="step-detail">{s.detail}</span>
+            <h3 class="step-title">{s.title}</h3>
+            <p class="step-desc">{s.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.proc-header { margin-bottom: 4rem; }
+.cyan { color: var(--cyan); }
+
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0;
+}
+
+.proc-step {
+  display: flex;
+  gap: 1.25rem;
+  padding: 2rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+}
+.proc-step:hover {
+  background: var(--cyan-dim);
+  border-color: var(--card-b);
+}
+
+/* connector line between steps */
+.proc-step:not(:last-child) .step-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(to bottom, rgba(0,212,255,0.3), transparent);
+  margin: 0.4rem auto 0;
+}
+
+.step-num-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.step-num {
+  font-family: var(--font-tech);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(0,212,255,0.2);
+  line-height: 1;
+  min-width: 44px;
+  text-align: center;
+  transition: color 0.3s;
+}
+.proc-step:hover .step-num { color: var(--cyan); }
+
+.step-detail {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  font-family: var(--font-tech);
+  margin-bottom: 0.4rem;
+  opacity: 0.7;
+}
+.step-title {
+  font-family: var(--font-tech);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+.step-desc {
+  font-size: 0.855rem;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  .proc-step { padding: 1.25rem; }
+}
+</style>

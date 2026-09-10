@@ -1,0 +1,205 @@
+---
+const pillars = [
+  { title: 'Código limpio y documentado',   desc: 'Entregamos proyectos que tu equipo puede mantener y escalar sin depender de nosotros para siempre.' },
+  { title: 'Plazos que se cumplen',          desc: 'Metodología ágil con sprints cortos y entregables constantes. Sin sorpresas al final del proyecto.' },
+  { title: 'Comunicación directa y clara',  desc: 'Tienes control total sobre el proceso. Tienes acceso directo, no solo a un sistema de tickets.' },
+  { title: 'Garantía post-entrega',          desc: 'Contamos con soporte post-entrega, cualquier error o incidencia reportada será atendida y solucionada en un lapso máximo de 24 horas hábiles. (Nota: El horario de atención y soporte es de lunes a viernes. Sábados y domingos la empresa no labora .' },
+];
+---
+
+<section class="section about-section" id="nosotros">
+  <div class="container about-grid">
+
+    <!-- LEFT -->
+    <div class="about-left">
+      <p class="section-tag reveal-left">// NOSOTROS</p>
+      <h2 class="section-title reveal-left" style="transition-delay:.1s">
+        Construimos con<br/>propósito, no solo<br/><span class="accent-word">con código</span>
+      </h2>
+      <p class="section-sub reveal-left" style="transition-delay:.2s">
+        Somos un equipo de ingenieros obsesionados con resolver problemas reales.
+        No vendemos horas, entregamos resultados.
+      </p>
+
+      <ul class="pillars" role="list">
+        {pillars.map((p, i) => (
+          <li class="pillar reveal-left" style={`transition-delay:${0.25 + i * 0.1}s`}>
+            <div class="pillar-check" aria-hidden="true">✓</div>
+            <div>
+              <strong class="pillar-title">{p.title}</strong>
+              <p class="pillar-desc">{p.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- RIGHT — orbital visual -->
+    <div class="about-right reveal-right" aria-hidden="true">
+      <div class="orbital">
+        <div class="orb orb1"><div class="orb-dot"></div></div>
+        <div class="orb orb2"><div class="orb-dot"></div></div>
+        <div class="orb orb3"><div class="orb-dot"></div></div>
+
+        <div class="orb-core">
+          <span class="orb-label">RTV</span>
+          <span class="orb-label-sub">SYS</span>
+        </div>
+
+        <!-- floating tags -->
+        <div class="ftag ftag1">Full-Stack</div>
+        <div class="ftag ftag2">APIs</div>
+        <div class="ftag ftag3">DevOps</div>
+        <div class="ftag ftag4">UI/UX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-section {
+  background: linear-gradient(to bottom, transparent, rgba(0,212,255,0.025), transparent);
+  border-top: 1px solid var(--card-b);
+  border-bottom: 1px solid var(--card-b);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.accent-word { color: var(--cyan); }
+
+.pillars {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+}
+.pillar {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.pillar-check {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+}
+.pillar-title {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.pillar-desc {
+  font-size: 0.83rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── ORBITAL ── */
+.about-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orbital {
+  position: relative;
+  width: 340px; height: 340px;
+}
+
+.orb {
+  position: absolute;
+  top: 50%; left: 50%;
+  border: 1px solid rgba(0,212,255,0.18);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+}
+.orb1 { width: 320px; height: 320px; animation: spin 22s linear infinite; }
+.orb2 { width: 220px; height: 220px; animation: spin 14s linear infinite reverse; }
+.orb3 { width: 130px; height: 130px; animation: spin  8s linear infinite; }
+
+.orb-dot {
+  position: absolute;
+  top: -5px; left: 50%;
+  margin-left: -5px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan), 0 0 24px rgba(0,212,255,0.4);
+}
+
+@keyframes spin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+.orb-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(0,212,255,0.1);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 30px rgba(0,212,255,0.25), inset 0 0 20px rgba(0,212,255,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.orb-label {
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--cyan);
+  line-height: 1;
+}
+.orb-label-sub {
+  font-family: var(--font-tech);
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+}
+
+/* floating tags */
+.ftag {
+  position: absolute;
+  font-family: var(--font-tech);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  background: rgba(0,212,255,0.06);
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.ftag1 { top: 5%;  left: 55%; animation: floatTag 5s ease infinite; }
+.ftag2 { top: 50%; left: 82%; animation: floatTag 5s ease 1.2s infinite; }
+.ftag3 { top: 82%; left: 48%; animation: floatTag 5s ease 2.5s infinite; }
+.ftag4 { top: 48%; left: -2%; animation: floatTag 5s ease 0.7s infinite; }
+
+@keyframes floatTag {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-right { display: none; }
+}
+</style>
