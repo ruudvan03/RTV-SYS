@@ -1,0 +1,264 @@
+---
+
+---
+
+<section class="section mv-section" id="nosotros">
+    <div class="container">
+        <!-- PRESENTACIÓN -->
+        <div class="presentacion reveal">
+            <p class="section-tag">// QUIÉNES SOMOS</p>
+            <h2 class="section-title">
+                Empresa orgullosamente<br />
+                <span class="accent">oaxaqueña</span> con alcance<br />
+                nacional
+            </h2>
+            <p class="presentacion-text">
+                Somos <strong>RTV SYS</strong>, una empresa especializada en
+                tecnología e innovación digital. Nacimos en Oaxaca con el
+                compromiso de brindar soluciones tecnológicas accesibles,
+                confiables y a la medida de cada cliente, llevando nuestros
+                servicios a todo México.
+            </p>
+            <div class="servicios-chips">
+                <span class="chip">Desarrollo de Software</span>
+                <span class="chip">Páginas Web</span>
+                <span class="chip">Mantenimiento de Equipos</span>
+                <span class="chip">Instalación de Office</span>
+                <span class="chip">Licencias Permanentes</span>
+                <span class="chip">Cámaras de Seguridad</span>
+                <span class="chip">Automatización</span>
+                <span class="chip">Consultoría TI</span>
+            </div>
+        </div>
+
+        <!-- MISIÓN Y VISIÓN -->
+        <div class="mv-grid">
+            <!-- MISIÓN -->
+            <div class="mv-card reveal" style="transition-delay:.1s">
+                <div class="mv-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        width="28"
+                        height="28"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"
+                        ></circle>
+                    </svg>
+                </div>
+                <div class="mv-label">// MISIÓN</div>
+                <h3 class="mv-title">Por qué existimos</h3>
+                <p class="mv-text">
+                    Brindar soluciones tecnológicas accesibles, confiables y a
+                    la medida de cada cliente. Nos comprometemos a transformar
+                    los retos tecnológicos de empresas y negocios en resultados
+                    reales, a través de software, soporte técnico y herramientas
+                    digitales que generan valor y crecimiento.
+                </p>
+                <div class="mv-footer">
+                    <span class="mv-tag">Oaxaca para México</span>
+                </div>
+            </div>
+
+            <!-- VISIÓN -->
+            <div class="mv-card reveal" style="transition-delay:.2s">
+                <div class="mv-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        width="28"
+                        height="28"
+                    >
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="mv-label">// VISIÓN</div>
+                <h3 class="mv-title">A dónde vamos</h3>
+                <p class="mv-text">
+                    Ser la empresa tecnológica de referencia más reconocida del
+                    sureste mexicano, con presencia en todo el país. Crecemos
+                    desde Oaxaca para llevar tecnología de calidad a cada rincón
+                    de México, permitiendo que empresas y emprendedores compitan
+                    y destaquen en el mundo digital.
+                </p>
+                <div class="mv-footer">
+                    <span class="mv-tag">Alcance Nacional</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mv-section {
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(0, 212, 255, 0.02),
+            transparent
+        );
+        border-top: 1px solid var(--card-b);
+        border-bottom: 1px solid var(--card-b);
+    }
+
+    /* ── PRESENTACIÓN ── */
+    .presentacion {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 5rem;
+    }
+    .accent {
+        color: var(--cyan);
+    }
+
+    .presentacion-text {
+        color: var(--gray);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin: 1.25rem 0 2rem;
+    }
+    .presentacion-text strong {
+        color: var(--white);
+        font-weight: 600;
+    }
+
+    .servicios-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    .chip {
+        font-family: var(--font-tech);
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        color: var(--cyan);
+        border: 1px solid rgba(0, 212, 255, 0.25);
+        background: rgba(0, 212, 255, 0.05);
+        padding: 0.35rem 0.85rem;
+        border-radius: 99px;
+        transition:
+            background 0.2s,
+            border-color 0.2s;
+    }
+    .chip:hover {
+        background: rgba(0, 212, 255, 0.12);
+        border-color: rgba(0, 212, 255, 0.5);
+    }
+
+    /* ── MISIÓN / VISIÓN GRID ── */
+    .mv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .mv-card {
+        background: rgba(0, 212, 255, 0.03);
+        border: 1px solid var(--card-b);
+        border-radius: 12px;
+        padding: 2.5rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+            border-color 0.3s,
+            background 0.3s,
+            transform 0.3s;
+    }
+    .mv-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .mv-card:hover {
+        border-color: rgba(0, 212, 255, 0.35);
+        background: rgba(0, 212, 255, 0.06);
+        transform: translateY(-4px);
+    }
+    .mv-card:hover::before {
+        opacity: 1;
+    }
+
+    .mv-icon {
+        width: 52px;
+        height: 52px;
+        border: 1px solid var(--card-b);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cyan);
+        margin-bottom: 1.25rem;
+        transition:
+            border-color 0.3s,
+            background 0.3s;
+    }
+    .mv-card:hover .mv-icon {
+        border-color: rgba(0, 212, 255, 0.5);
+        background: rgba(0, 212, 255, 0.08);
+    }
+
+    .mv-label {
+        font-family: var(--font-tech);
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        color: var(--cyan);
+        margin-bottom: 0.5rem;
+    }
+
+    .mv-title {
+        font-family: var(--font-tech);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .mv-text {
+        color: var(--gray);
+        font-size: 0.875rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .mv-footer {
+        border-top: 1px solid var(--card-b);
+        padding-top: 1rem;
+    }
+    .mv-tag {
+        font-family: var(--font-tech);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        color: var(--cyan);
+        opacity: 0.7;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+        .mv-grid {
+            grid-template-columns: 1fr;
+        }
+        .presentacion {
+            margin-bottom: 3rem;
+        }
+    }
+</style>
