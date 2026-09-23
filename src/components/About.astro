@@ -199,7 +199,23 @@ const pillars = [
 
 /* responsive */
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .about-right { display: none; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .orbital {
+    width: 240px;
+    height: 240px;
+    transform: scale(0.75);
+  }
+  .orb1 { width: 220px; height: 220px; }
+  .orb2 { width: 150px; height: 150px; }
+  .orb3 { width:  90px; height:  90px; }
+  .ftag { font-size: 0.55rem; padding: 0.2rem 0.45rem; }
 }
 </style>
